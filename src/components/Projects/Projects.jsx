@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Card, Button } from 'react-bootstrap';
+import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import marginPredictorImg from '../../assets/images/marginPredictor.png';
 import proteinProImg from '../../assets/images/proteinPro.png';
 import cnnIMG from '../../assets/images/cnn.png';
@@ -74,37 +74,63 @@ const Projects = () => {
 		];
 
     return (
-        <Container fluid className="projects-section">
-            <Row className="text-center">
-                <h1>Projects</h1>
-            </Row>
-            <div>
-                {projects.map((project, index) => (
-                    <Row className={`project-row ${index % 2 === 1 ? 'justify-content-end' : ''}`} key={index}>
-                        <Card className={`project-card ${index % 2 === 0 ? 'left' : 'right'}`}>
-                            <Card.Body>
-                                <Card.Title>{project.title}</Card.Title>
-                                <Card.Text>{project.subtext}</Card.Text>
-                                {project.imageUrl ? (
-                                    <Card.Img className="card-img" variant="top" src={project.imageUrl} alt={project.title} />
-                                ) : (
-                                    <div className="card-img-placeholder">
-                                        <span>{project.imageText}</span>
-                                    </div>
-                                )}
-                                <Card.Text>{project.description}</Card.Text>
-                                {project.buttonUrl ? (
-                                    <Button variant="secondary" href={project.buttonUrl} target="_blank">{project.buttonText}</Button>
-                                ) : (
-                                    <Button className="btn-disabled" variant="secondary" disabled>{project.buttonText}</Button>
-                                )}
-                            </Card.Body>
-                        </Card>
-                    </Row>
-                ))}
-            </div>
-        </Container>
-    );
+			<Container fluid className="projects-section">
+				<Row className="text-center g-0">
+					<Col>
+						<h1>Projects</h1>
+					</Col>
+				</Row>
+				<div>
+					{projects.map((project, index) => (
+						<Row
+							className={`project-row ${
+								index % 2 === 1 ? "justify-content-end" : ""
+							}`}
+							key={index}
+						>
+							<Card
+								className={`project-card ${index % 2 === 0 ? "left" : "right"}`}
+							>
+								<Card.Body>
+									<Card.Title>{project.title}</Card.Title>
+									<Card.Text>{project.subtext}</Card.Text>
+									{project.imageUrl ? (
+										<Card.Img
+											className="card-img"
+											variant="top"
+											src={project.imageUrl}
+											alt={project.title}
+										/>
+									) : (
+										<div className="card-img-placeholder">
+											<span>{project.imageText}</span>
+										</div>
+									)}
+									<Card.Text>{project.description}</Card.Text>
+									{project.buttonUrl ? (
+										<Button
+											variant="secondary"
+											href={project.buttonUrl}
+											target="_blank"
+										>
+											{project.buttonText}
+										</Button>
+									) : (
+										<Button
+											className="btn-disabled"
+											variant="secondary"
+											disabled
+										>
+											{project.buttonText}
+										</Button>
+									)}
+								</Card.Body>
+							</Card>
+						</Row>
+					))}
+				</div>
+			</Container>
+		);
 }
 
 export default Projects;

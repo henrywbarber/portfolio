@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
+
+/* Debugging outlines */
+* {
+  outline: 1px solid rgba(255, 0, 0, 0.3);
+}
+
 :root {
   --font-family: "Noto Sans", sans-serif;
   --bg-color: rgb(31, 31, 31);
@@ -12,6 +18,7 @@
 }
 
 body {
+  /* overflow-x: hidden; */
   background-color: var(--bg-color);
   color: var(--off-white);
   font-family: var(--font-family);
