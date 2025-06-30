@@ -71,6 +71,8 @@ const HeroCanvas = () => {
 		canvas.width = document.documentElement.clientWidth;
 		canvas.height = document.documentElement.clientHeight;
 
+		const isMobile = window.innerWidth <= 800;
+
 		for (let i = 0; i < dotCount; i++) {
 			dots.current.push(createDot());
 		}
@@ -83,34 +85,35 @@ const HeroCanvas = () => {
 			}
 		};
 
-		// Start animation when component mounts
 		animate();
 
 		const handleMouseMove = event => {
 			mousePosition.current = { x: event.clientX, y: event.clientY };
 		};
 
-		window.addEventListener("mousemove", handleMouseMove);
+		if (!isMobile) {
+			window.addEventListener("mousemove", handleMouseMove);
+		}
+
 		window.addEventListener("resize", () => {
 			canvas.width = window.innerWidth;
 			canvas.height = window.innerHeight;
 		});
 
-		// Observer to detect if canvas is in viewable window (stop animation when out of view)
 		const observer = new IntersectionObserver(
 			([entry]) => {
 				setIsVisible(entry.intersectionRatio > 0);
 			},
-			{
-				threshold: 0.1
-			}
+			{ threshold: 0.1 }
 		);
 
 		observer.observe(canvas);
 
 		return () => {
 			cancelAnimationFrame(animationFrameId);
-			window.removeEventListener("mousemove", handleMouseMove);
+			if (!isMobile) {
+				window.removeEventListener("mousemove", handleMouseMove);
+			}
 			observer.disconnect();
 		};
 	}, [isVisible]);
