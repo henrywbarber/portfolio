@@ -11,13 +11,13 @@ import './About.css';
 
 const About = () => {
     return (
-        <Container className="about-section content-section">
-            <Row className="text-center mb-5">
+        <Container className="about-section content-section" style={{paddingTop: "10vh", paddingRight: "6rem", paddingLeft: "6rem"}}>
+            <Row className="text-center">
                 <Col>
                     <h1>About</h1>
                 </Col>
             </Row>
-            <Row className="text-center mb-5">
+            <Row className="text-center">
                 <Col>
                     <Image
                         src={portrait}
@@ -27,18 +27,18 @@ const About = () => {
                     />
                 </Col>
             </Row>
-            <Row className="text-center mb-5">
+            <Row className="text-center" style={{ paddingTop: "1rem"}}>
                 <Col>
                     <p>
-                        I'm a junior software engineer with a passion for creative problem-solving and continuous learning. When I'm not tackling code, you'll likely find me out on my bike, exploring trails, or crafting new music playlists. I'm always looking to expand my skills and make an impact through technology.
+                        I'm a Junior Software Engineer with a passion for creative problem solving and continuous learning. When I'm not tackling code, you'll likely find me biking with friends, exploring nature trails, or crafting new music playlists. I'm always looking to expand my skills and make an impact through everyday technology.
                     </p>
                 </Col>
             </Row>
 
-            <Row className="skills-section mt-5 justify-content-center">
+            <Row className="skills-section justify-content-center">
                 {[CPPlogo, Javalogo, Pythonlogo, SQLlogo, VSlogo, Jiralogo].map((icon, index) => (
                     <Col xs={6} sm={4} md={3} lg={2} key={index} className="d-flex justify-content-center mb-4">
-                        <Card className="skill-card p-2">
+                        <Card className="skill-card">
                             <Card.Img src={icon} alt="Skill Icon" className="icon" />
                         </Card>
                     </Col>

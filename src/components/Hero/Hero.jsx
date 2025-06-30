@@ -26,7 +26,7 @@ const Hero = () => {
     });
 
     return (
-        <div className="hero-section">
+        <div className="hero-section" id="hero">
             <HeroCanvas />
             <div className="hero-content">
                 <animated.h1 style={nameAnimation} className="hero-name">

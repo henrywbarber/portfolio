@@ -35,6 +35,29 @@
     border-bottom-left-radius: 2.5%;
 }
 
+@media (max-width: 800px) {
+    .project-row {
+        justify-content: center;
+        /* Centers the Row */
+    }
+
+    .project-card {
+        width: 90%;
+        /* Adjusts card width for mobile screens */
+        margin: 1rem auto;
+        /* Centers card horizontally */
+    }
+
+    .left,
+    .right {
+        padding: 1.5rem !important;
+        /* Uniform padding on mobile */
+        border-radius: 7px;
+        /* Smaller radius for mobile */
+    }
+}
+
+
 .card-body {
     align-self: center;
     text-align: left;

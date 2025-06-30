@@ -1,7 +1,37 @@
-.mobile {
-    position: relative;
-    background-color: transparent;
-    transition: all 0.1s ease-in-out;
+.custom-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    z-index: 1000;
+    background-color: var(--bg-accent);
+    box-shadow: 0 5px 3px 0 rgba(0, 0, 0, .2);
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.navbar-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.navbar-hidden {
+    opacity: 0;
+    transform: translateY(-100%);
+    pointer-events: none;
+}
+
+.navbar {
+    font-size: 1.25rem;
+    color: var(--off-white);
+    width: 100%;
+}
+
+.navContainer {
+    padding: 0 !important;
+    width: 100vw;
 }
 
 .sticky {
@@ -9,20 +39,23 @@
     top: 0;
     left: 0;
     right: 0;
+    width: 100vw;
     background-color: var(--bg-accent);
     box-shadow: 0 5px 3px 0 rgba(0, 0, 0, .2);
     transition: all 0.3s ease-in-out;
     z-index: 1000;
 }
 
-.navbar {
-    font-size: 1.25rem;
-    color: var(--off-white);
+.mobile {
+    position: relative;
+    background-color: transparent;
+    transition: all 0.1s ease-in-out;
+    width: 100%;
 }
 
+
 .nav-link {
-    padding: 0 15px;
-    margin-right: 1.5rem;
+    padding: 0 1rem !important;
     border-radius: 8px;
     transition: background-color 0.3s ease;
     cursor: pointer;
