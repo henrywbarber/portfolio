@@ -12,14 +12,13 @@ function CustomNavbar() {
 
 		const observer = new IntersectionObserver(
 			([entry]) => {
-				setIsVisible(!entry.isIntersecting); // show navbar when Hero is not visible
+				setIsVisible(!entry.isIntersecting);
 			},
 			{
 				threshold: 0,
-				rootMargin: "-5% 0px 0px 0px" // treat Hero as invisible when it's scrolled just 5% out of view
+				rootMargin: "-5% 0px 0px 0px"
 			}
 		);
-          
 
 		if (hero) observer.observe(hero);
 
